@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theatre Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="ticket.jpg" alt="Theatre Logo" class="logo">
+        <h1>Theatre Ticket Booking</h1>
+    </header>
+
+    <div class="container">
+       
+        <div id="ticketForm">
+            <label for="movieTitle">Select Movie:</label><br>
+            <select id="movieTitle" required>
+                <option value="" disabled selected>Select a movie</option>
+                <option value="Movie 1">Movie 1</option>
+                <option value="Movie 2">Movie 2</option>
+                <option value="Movie 3">Movie 3</option>
+            </select><br><br>
+            <label for="numTickets">Number of Tickets:</label><br>
+            <input type="number" id="numTickets" min="1" max="10" required><br><br>
+            <button id="submitDetails">Submit</button>
+        </div>
+
+        <div id="theatre"></div>
+        <div id="selectedSeats"></div>
+        <button id="bookTickets" style="display:none;">Book Tickets</button>
+    </div>
+
+    
+    <div id="paymentModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Payment Information</h2>
+            <div id="paymentOptions">
+                <label><input type="radio" name="paymentMethod" value="card" checked> Credit/Debit Card</label><br>
+                <label><input type="radio" name="paymentMethod" value="upi"> UPI</label>
+            </div>
+            <form id="paymentForm">
+                <div id="cardPayment">
+                    <label for="cardNumber">Card Number:</label><br>
+                    <input type="text" id="cardNumber" required><br><br>
+                    <label for="expiryDate">Expiry Date (MM/YY):</label><br>
+                    <input type="text" id="expiryDate" required><br><br>
+                    <label for="cvv">CVV:</label><br>
+                    <input type="text" id="cvv" required><br><br>
+                </div>
+                <div id="upiPayment" style="display:none;">
+                    <label for="upiId">UPI ID:</label><br>
+                    <input type="text" id="upiId" required><br><br>
+                </div>
+                <button type="submit">Confirm Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Theatre Booking. All rights reserved.</p>
+        <p>Contact Us: <br>
+        Phone: +91 0000000000 <br>
+        Email: info@theatrebooking.com</p>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
